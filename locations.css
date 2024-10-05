@@ -1,0 +1,40 @@
+body {
+    background: black;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    padding: 2em;
+}
+
+.locations {
+    margin-top: 20vh;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.country-heading {
+    font-size: 5vw;
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 3vh;
+    color: #FFE0B9;
+    text-transform: uppercase;
+}
+
+.state-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.state-name {
+    font-size: 3vw;
+    font-family: 'Anton', sans-serif;
+    color: #FFE0B9;
+    text-transform: uppercase;
+}
+
+.leader-name {
+    font-size: 1.5vw;
+    font-weight: 300;
+    margin-top: 0.5em;
+    color: #fff;
+}

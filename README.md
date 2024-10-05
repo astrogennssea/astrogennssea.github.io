@@ -1,1 +1,2 @@
-# astrogennssea.github.io
+# astroGEN-NSSEA.github.io
+astroGEN Official GitHub page

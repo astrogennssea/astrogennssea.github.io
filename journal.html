@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>astroGEN-NSSEA Research</title>
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* General styling */
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: white;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 1.25em;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-family: "DM Sans", sans-serif;
+            font-weight: 300;
+            font-size: 1.25em;
+        }
+
+        .hero h1 {
+            font-size: 8vw;
+            line-height: 1;
+            letter-spacing: 1px;
+            margin-bottom: 1.5vh;
+        }
+
+        .hero a {
+            margin-top: 1.5vh;
+            display: inline-block;
+            padding: 1vh 1.5vw;
+            border: 2px solid white;
+            border-radius: 1000px;
+            width: max-content;
+            transition: background 0.2s ease-out, color 0.2s ease-in-out;
+        }
+
+        .hero a:hover {
+            background: white;
+            color: black;
+            transition: background 0.2s ease-out, color 0.2s ease-in-out;
+        }
+
+        /* Research container styling */
+        .research-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 5vh auto;
+            width: 90%;
+        }
+
+        /* Research card styling */
+        .research-card {
+            position: relative;
+            width: 30%; /* Adjusted to fit 3 cards in a row */
+            margin-bottom: 5vh;
+            padding: 2vw;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            box-sizing: border-box;
+            height: 300px; /* Increased height for more content */
+        }
+
+        .research-card img, .research-card video {
+            width: 100%;
+            height: 60%;
+            object-fit: cover; /* Ensure proper cover */
+        }
+
+        .research-card .content {
+            padding: 1vw;
+            height: 40%; /* Adjusted for description/abstract and button */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .research-card h2 {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.5vw;
+            margin: 0;
+            color: white;
+        }
+
+        .research-card p {
+            font-size: 1em;
+            color: white;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .research-card .button {
+            margin-top: 1vh;
+            display: inline-block;
+            padding: 0.8vh 1.2vw;
+            border: 2px solid white;
+            border-radius: 1000px;
+            background: transparent;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .research-card .button:hover {
+            background: white;
+            color: black;
+        }
+
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(31, 38, 135, 0.5);
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 15px;
+            z-index: 0; /* Ensures it’s behind content */
+        }
+
+        .research-card:hover::before {
+            opacity: 1;
+        }
+
+        .research-card .content {
+            position: relative;
+            z-index: 1; /* Ensures content is above shine effect */
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 1200px) {
+            .research-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .research-card {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <h2><span></span></h2>
+        <h1><span>GENERATING</span></h1>
+    </div>
+    <div class="navbar">
+        <h2>astroGEN.</h2>
+        <div class="menu-toggle">
+            <img class="black" src="navbar-black.svg" alt="">
+            <img class="yellow" src="navbar-yellow.svg" alt="">
+        </div>
+    </div>
+    <div class="menu">
+        <div class="nav-links">
+            <a href="index.html"><span style="--animation-index:2;">HOME</span></a>
+            <a href="about.html"><span style="--animation-index:3;">ABOUT</span></a>
+            <a href="journal.html"><span style="--animation-index:4;">JOURNAL</span></a>
+            <a href="services.html"><span style="--animation-index:5;">SERVICES</span></a>
+        </div>
+        <div class="contacts">
+            <h2 style="--animation-index:0;">CONTACT US</h2>
+            <div class="socials" style="--animation-index:1;">
+                <a href="">INSTAGRAM</a>
+                <a href="https://www.linkedin.com/company/astrogen/">LINKEDIN</a>
+                <a href="https://www.youtube.com/@NSSEA">YOUTUBE</a>
+            </div>
+            <a style="--animation-index:2;" href="mailto:nationalastrophysics@gmail.com">nationalastrophysics@gmail.com</a>
+        </div>
+    </div>
+    <div class="scroll-container">
+        <div class="hero">
+            <h1>NSSEA-ASTROGEN RESEARCH</h1>
+            <p>The Singularity to Physics' Future</p>
+            <a href="">SEE MORE</a>
+        </div>
+        
+        <<div class="research-container">
+            <div class="research-card">
+                <video src="10.mp4" controls></video>
+                <div class="content">
+                    <h2>Project Title 1</h2>
+                    <p>Description or abstract of the research project goes here.</p>
+                    <a class="button" href="#">View More</a>
+                </div>
+            </div>
+            <div class="research-card">
+                <video src="10.mp4" controls></video>
+                <div class="content">
+                    <h2>Project Title 2</h2>
+                    <p>Description or abstract of the research project goes here.</p>
+                    <a class="button" href="#">View More</a>
+                </div>
+            </div>
+            <div class="research-card">
+                <video src="10.mp4" controls></video>
+                <div class="content">
+                    <h2>Project Title 3</h2>
+                    <p>Description or abstract of the research project goes here.</p>
+                    <a class="button" href="#">View More</a>
+                </div>
+            </div>
+            <!-- Add more research cards as needed -->
+        </div>
+        
+
+        <div class="footer">
+            <div class="content">
+                <div class="left">
+                    <p>COPYRIGHT &copy; 2023 ALL RIGHTS RESERVED. ASTROGEN.</p>
+                    <p>DESIGNED AND DEVELOPED BY RUDRA SEKHRI</p>
+                </div>
+                <div class="right">
+                    <div class="links">
+                        <a href="">INSTAGRAM</a>
+                        <a href="https://www.linkedin.com/company/astrogen/">LINKEDIN</a>
+                        <a href="https://www.youtube.com/@NSSEA">YOUTUBE</a>
+                    </div>
+                    <a href="mailto:nationalastrophysics@gmail.com">nationalastrophysics@gmail.com</a>
+                </div>
+            </div>
+            <h1>astroGEN.</h1>
+        </div>
+    </div>
+    <script src="navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="smooth-scroll.js"></script>
+    <script src="loading.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="cursor.js"></script>
+</body>
+</html>
